@@ -11,5 +11,5 @@
   Para executar somente a análise léxica:
   
   ```sh
-  python3 main.py FILE -l
+  python3 main.py -l FILE
   ```

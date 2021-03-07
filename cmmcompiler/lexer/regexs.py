@@ -1,5 +1,5 @@
 id_regex = r'[a-zA-Z][a-zA-Z]*'
-comment_regex = r'/\*.*\*/'
+comment_regex = r'\/\*[^\r]*\*\/'
 
 #! MATH
 t_PLUS = r'\+'
