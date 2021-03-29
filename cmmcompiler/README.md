@@ -1,7 +1,7 @@
 # Compilador da linguagem C-
 
 ### Dependências
-  Para instalar as depências, execute:
+  Para instalar as dependências, execute:
 
   ```sh
   pip install -r requirements.txt
