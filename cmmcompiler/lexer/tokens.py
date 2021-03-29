@@ -1,4 +1,4 @@
-__all__ = ['tokens']
+__all__ = ['tokens', 'TOKENS_SYMBOLS']
 
 reserved = {
     'else': 'ELSE',
@@ -41,6 +41,35 @@ markers = [
     'ID',
     'NUMBER',
 ]
+
+
+TOKENS_SYMBOLS = {
+    'PLUS': '+',
+    'MINUS': '-',
+    'TIMES': '*',
+    'DIVIDE': '/',
+    'LESS_EQUAL': '<=',
+    'LESS': '<',
+    'GREATER_EQUAL': '>=',
+    'GREATER': '>',
+    'EQUALS': '==',
+    'DIFFERENT': '!=',
+    'LPAREN': '(',
+    'RPAREN': ')',
+    'LBRACKETS': '[',
+    'RBRACKETS': ']',
+    'LBRACES': '{',
+    'RBRACES': '}',
+    'ATTRIBUTION': '=',
+    'SEMICOLON': ';',
+    'COMMA': ',',
+    'ELSE': 'else',
+    'IF': 'if',
+    'INT': 'int',
+    'RETURN': 'return',
+    'VOID': 'void',
+    'WHILE': 'while',
+}
 
 tokens = markers + math_symbols + comparison_symbols + \
     control_symbols + list(reserved.values())

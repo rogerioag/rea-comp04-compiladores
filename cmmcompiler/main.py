@@ -12,7 +12,12 @@ if __name__ == '__main__':
                 pass
 
         if utils.args.parser:
-            parser.parse(as_str)
+
+            graph = utils.Graph('asdasd', 'Parser')
+            program = parser.parse(as_str)
+            program.render(graph)
+
+            graph.export()
             pass
 
         pass

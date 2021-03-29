@@ -5,4 +5,4 @@ from .grammar import *
 from lexer import tokens
 
 
-parser = yacc.yacc(start='program', tracking=True)
+parser = yacc.yacc(start='program')

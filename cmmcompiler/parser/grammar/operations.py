@@ -1,3 +1,17 @@
+__all__ = ['p_relational', 'p_addition', 'p_multiplication']
+
+from lexer import TOKENS_SYMBOLS
+from tree import TreeNode
+
+
+def get_token_by_raw(raw):
+    
+    for (token, value) in TOKENS_SYMBOLS.items():
+        if value == raw:
+            return token
+        pass
+
+    return None
 
 
 def p_relational(parser):
@@ -8,15 +22,22 @@ def p_relational(parser):
              | EQUALS
              | DIFFERENT
     """
+    [_, raw] = parser
+    parser[0] = TreeNode(id=get_token_by_raw(raw), raw=raw)
     pass
 
 def p_addition(parser):
     """addop : PLUS
              | MINUS
     """
+    [_, raw] = parser
+    parser[0] = TreeNode(id=get_token_by_raw(raw), raw=raw)
     pass
 
 def p_multiplication(parser):
     """mulop : TIMES
              | DIVIDE
     """
+    [_, raw] = parser
+    parser[0] = TreeNode(id=get_token_by_raw(raw), raw=raw)
+    pass
