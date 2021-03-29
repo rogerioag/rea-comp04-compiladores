@@ -1,4 +1,4 @@
-__all__ = ['tokens', 'lexer', 'get_tokens']
+__all__ = ['tokens', 'lexer', 'get_tokens', 'TOKENS_SYMBOLS', 'number_regex']
 
 # ------------------------------------------------------------
 # tokenizer for a C subset language called C-
@@ -9,6 +9,8 @@ from ply.lex import TOKEN
 from .tokens import *
 from .regexs import *
 from .methods import *
+
+from .regexs import t_NUMBER as number_regex
 
 
 def get_tokens(input):
