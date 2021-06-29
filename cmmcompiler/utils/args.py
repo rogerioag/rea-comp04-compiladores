@@ -9,7 +9,6 @@ parser.add_argument('-l', '--lexer', action='store_true',
 parser.add_argument('-p', '--parser', action='store_true',
                     help='Execute only the syntax analysis')
 
-
 parser.add_argument('file', help='Source Code in C-')
 
 args = parser.parse_args()
