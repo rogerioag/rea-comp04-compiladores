@@ -42,7 +42,6 @@ markers = [
     'NUMBER',
 ]
 
-
 TOKENS_SYMBOLS = {
     'PLUS': '+',
     'MINUS': '-',

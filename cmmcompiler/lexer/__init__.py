@@ -12,7 +12,6 @@ from .methods import *
 
 from .regexs import t_NUMBER as number_regex
 
-
 def get_tokens(input):
     lexer = lex.lex()
     lexer.input(input)
