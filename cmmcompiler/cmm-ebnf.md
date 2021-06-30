@@ -1,4 +1,4 @@
-# EBNF da Linguagem `C--`
+# EBNF da Linguagem `C-`
 
 ```ebnf
 program : declaration-list
