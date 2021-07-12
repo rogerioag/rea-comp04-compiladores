@@ -38,8 +38,10 @@ def p_var(parser):
     pass
 
 
+# TODO: Estava faltando term. Verificar a montagem do nó.
+
 def p_term(parser):
-    """term : mulop factor
+    """term : term mulop factor
             | factor
     """
     parser[0] = TreeNode(id='TERM')
@@ -48,7 +50,9 @@ def p_term(parser):
     node.insert_node(leaf)
 
     if len(parser) > 2:
-        [factor] = parser[2:3]
+        [mulop] = parser[2:3]
+        node.insert_node(mulop)
+        [factor] = parser[3:4]
         node.insert_node(factor)
         pass
     pass
@@ -79,7 +83,7 @@ def p_call(parser):
     """call : id LPAREN args RPAREN"""
     parser[0] = TreeNode(id='CALL')
 
-    [node, id_raw, _, args] = parser
+    [node, id_raw, _, args, _] = parser
 
     id_node = TreeNode(id='ID')
     id_node.insert_node(TreeNode(raw=id_raw))
@@ -117,7 +121,7 @@ def p_args(parser):
     pass
 
 def p_arg_list(parser):
-    """arg-list : arg-list SEMICOLON expression
+    """arg-list : arg-list COMMA expression
                 | expression
     """
     parser[0] = TreeNode(id='ARG_LIST')
@@ -126,7 +130,7 @@ def p_arg_list(parser):
     node.insert_node(leaf)
     if len(parser) > 2:
         [_, exp] = parser[2:4]
-        node.insert_node(TreeNode(id='SEMICOLON', raw=TOKENS_SYMBOLS.get('SEMICOLON')))
+        node.insert_node(TreeNode(id='COMMA', raw=TOKENS_SYMBOLS.get('COMMA')))
         node.insert_node(exp)
         pass
     pass
