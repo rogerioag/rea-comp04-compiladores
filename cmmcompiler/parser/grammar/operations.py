@@ -13,7 +13,6 @@ def get_token_by_raw(raw):
 
     return None
 
-
 def p_relational(parser):
     """relop : LESS_EQUAL
              | LESS
@@ -23,7 +22,8 @@ def p_relational(parser):
              | DIFFERENT
     """
     [_, raw] = parser
-    parser[0] = TreeNode(id=get_token_by_raw(raw), raw=raw)
+    parser[0] = TreeNode(id=get_token_by_raw(raw))
+    parser[0].insert_node(TreeNode(raw=raw))
     pass
 
 def p_addition(parser):
@@ -31,7 +31,8 @@ def p_addition(parser):
              | MINUS
     """
     [_, raw] = parser
-    parser[0] = TreeNode(id=get_token_by_raw(raw), raw=raw)
+    parser[0] = TreeNode(id=get_token_by_raw(raw))
+    parser[0].insert_node(TreeNode(raw=raw))
     pass
 
 def p_multiplication(parser):
@@ -39,5 +40,6 @@ def p_multiplication(parser):
              | DIVIDE
     """
     [_, raw] = parser
-    parser[0] = TreeNode(id=get_token_by_raw(raw), raw=raw)
+    parser[0] = TreeNode(id=get_token_by_raw(raw))
+    parser[0].insert_node(TreeNode(raw=raw))
     pass

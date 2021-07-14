@@ -34,6 +34,10 @@ class TreeNode:
 
         return len(self.__nodes)
 
+    def insert_node_with_child(self, father, child):
+        father.__nodes.append(child)
+        return self.insert_node(father)
+
     def render(self, graph):
 
         node = graph.get_node(id=self.__increment, label=str(self))

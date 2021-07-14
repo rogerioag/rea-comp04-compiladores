@@ -27,4 +27,6 @@ t_ATTRIBUTION = r'='
 t_SEMICOLON = r';'
 t_COMMA = r','
 
-t_NUMBER = r'[0-9][0-9]*'
+# t_NUMBER = r'[0-9][0-9]*'
+t_NUMBER = r'[+|-]?[0-9]+'
+
