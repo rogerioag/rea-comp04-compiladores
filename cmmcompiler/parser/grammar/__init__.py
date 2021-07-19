@@ -22,11 +22,17 @@ from .statements import *
 
 def p_program(parser):
     """program : declaration-list"""
+
+    global syntax_tree
+
     parser[0] = TreeNode(id='program')
 
     [node, declaration_list] = parser
 
     node.insert_node(declaration_list)
+
+    syntax_tree = parser[0]
+    
     pass
 
 def p_var(parser):
