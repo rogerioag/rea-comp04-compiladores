@@ -1,4 +1,18 @@
+import ply.yacc as yacc
+from lexer import tokens
 import re as regex
+
+from sys import argv, exit
+
+import logging
+
+logging.basicConfig(
+     level = logging.DEBUG,
+     filename = "cmmcompiler.log",
+     filemode = "w",
+     format = "%(filename)10s:%(lineno)4d:%(message)s"
+)
+log = logging.getLogger()
 
 from lexer import TOKENS_SYMBOLS
 from tree import TreeNode

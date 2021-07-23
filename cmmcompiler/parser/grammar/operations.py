@@ -3,7 +3,6 @@ __all__ = ['p_relational', 'p_addition', 'p_multiplication']
 from lexer import TOKENS_SYMBOLS
 from tree import TreeNode
 
-
 def get_token_by_raw(raw):
     
     for (token, value) in TOKENS_SYMBOLS.items():
