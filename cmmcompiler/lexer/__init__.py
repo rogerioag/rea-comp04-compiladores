@@ -12,6 +12,18 @@ from .methods import *
 
 from .regexs import t_NUMBER as number_regex
 
+from sys import argv, exit
+
+import logging
+
+logging.basicConfig(
+     level = logging.DEBUG,
+     filename = "parser.log",
+     filemode = "w",
+     format = "%(filename)10s:%(lineno)4d:%(message)s"
+)
+log = logging.getLogger()
+
 def get_tokens(input):
     lexer = lex.lex()
     lexer.input(input)

@@ -3,16 +3,6 @@ import re as regex
 from lexer import TOKENS_SYMBOLS
 from tree import TreeNode
 
-import logging
-
-logging.basicConfig(
-     level = logging.DEBUG,
-     filename = "parser.log",
-     filemode = "w",
-     format = "%(filename)10s:%(lineno)4d:%(message)s"
-)
-log = logging.getLogger()
-
 from .declarations import *
 from .expressions import *
 from .operations import *

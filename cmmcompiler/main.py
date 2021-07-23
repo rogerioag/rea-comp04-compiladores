@@ -6,17 +6,26 @@ from semantic import sema, Semantic
 from gencode import gencode, GenCode
 from tree import TreeNode
 
+import logging
+logging.basicConfig(
+    filename = "cmmcompiler.log",
+    encoding='utf-8',
+    level = logging.DEBUG,
+    filemode = "w",
+    format = "%(filename)10s:%(lineno)4d:%(message)s")
+log = logging.getLogger()
+
 syntax_tree = None
 reduced_syntax_tree = None
 
 def execute_lexical_analysis(source_input):
-    print("[lexer]: Executing Lexical Analysis.")
+    log.info("[lexer]: Executing Lexical Analysis.")
     for token in get_tokens(source_input):
         print(token.type, token.value)
     return
 
 def execute_syntax_analisys(source_input):
-    print("[parser]: Executing Syntax Analysis.")
+    log.info("[parser]: Executing Syntax Analysis.")
     syntax_tree = parser.parse(source_input)
     if syntax_tree != ():
         print("Generating Syntax Tree Graph...")
@@ -27,13 +36,13 @@ def execute_syntax_analisys(source_input):
     return syntax_tree
 
 def execute_semantic_analisys(syntax_tree):
-    print("[sema]: Executing Semantic Analysis.")
+    log.info("[sema]: Executing Semantic Analysis.")
     sema = Semantic(syntax_tree)
     sema.check_semantic_rules()
     return reduced_syntax_tree
 
 def execute_code_generation(reduced_syntax_tree):
-    print("[gencode]: Executing Code Generation.")
+    log.info("[gencode]: Executing Code Generation.")
     gencode = GenCode(reduced_syntax_tree)
     gencode.generate()
     return
