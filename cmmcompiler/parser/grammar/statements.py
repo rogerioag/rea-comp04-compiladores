@@ -9,8 +9,10 @@ def p_statement_list(parser):
 
     [node, subtree] = parser[:2]
 
+    node.insert_node(subtree)
+
     if len(parser) > 2:
-        node.insert_nodes(subtree.nodes())
+        # node.insert_nodes(subtree.nodes())
         [stmt] = parser[2:3]
         node.insert_node(stmt)
         pass

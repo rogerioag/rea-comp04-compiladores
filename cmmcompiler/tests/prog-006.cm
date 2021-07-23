@@ -1,23 +1,30 @@
 int a;
 int b[10];
-int c[3][5];
 
-b = 10
+int input(void){
+  return;
+}
+
+void output(int x){
+
+}
 
 int func(int x, int y){
   int res;
-  res = x + y;
+  res = x + y - 2;
+  if(res != 0){
+    res = -1;
+  }
   return(res);
 }
 
-int main(){
+int main(void){
   a = input();
   b = input();
 
   b[0] = a;
-  b[1] = b;
-  c[0][1] = func(a,b);
+  b[1] = func(a,b);
 
-  output(c[3]);
+  output(a);
   return(0);
 }

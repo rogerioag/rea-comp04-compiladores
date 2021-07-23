@@ -1,30 +1,16 @@
-int a;
-int b[10];
+/* Exemplo de programa para calcular o mdc
+   segundo o algoritmo de Euclides. */
 
-int input(void){
-  return;
+int gcd (int u, int v){
+  if (v == 0) return u;
+  else return gcd(v,u-u/v*v);
+  /* u-u/v*v == u mod v */
 }
 
-void output(int x){
-
+void main(void){
+  int x; int y;
+  x = input();
+  y = input();
+  output(gcd(x,y));
 }
 
-int func(int x, int y){
-  int res;
-  res = x + y - 2;
-  if(res != 0){
-    res = -1;
-  }
-  return(res);
-}
-
-int main(void){
-  a = input();
-  b = input();
-
-  b[0] = a;
-  b[1] = func(a,b);
-
-  output(a);
-  return(0);
-}

@@ -1,11 +1,16 @@
+/* Exemplo de programa para calcular o mdc
+   segundo o algoritmo de Euclides. */
 
-int a;
-float b;
+int soma (int u, int v){
+  return u + v;
+}
 
 int main(void){
-  int x;
-  float y;
-
-  return(0);
+  int x; int y; int z;
+  x = input();
+  y = input();
+  z = soma(x,y);
+  output(z);
+  return 0;
 }
 
