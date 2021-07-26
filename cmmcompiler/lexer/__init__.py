@@ -39,4 +39,5 @@ def get_tokens(input):
     pass
 
 
-lexer = lex.lex()
+# lexer = lex.lex()
+lexer = lex.lex(optimize=True,debug=True,debuglog=log)
