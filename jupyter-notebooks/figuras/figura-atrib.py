@@ -10,7 +10,7 @@ id_b = Node("b", parent=expressao)
 
 id_c = Node("c", parent=expressao)
 
-DotExporter(atribuicao).to_picture("atribuica-asa.png")
+DotExporter(atribuicao).to_picture("atribuicao-asa.png")
 
 
 
