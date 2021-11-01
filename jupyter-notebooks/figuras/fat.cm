@@ -1,0 +1,21 @@
+int fatorial(int n)
+  int fat;
+  /* não calcula se n > 0 */
+  if (n > 0) { 
+    fat = 1;
+    while (0 < n){
+      fat = fat * n;
+      n = n - 1;
+    }
+    /* retorna o valor do fatorial de n */
+    return(fat) 
+  }
+  else return (0)
+}
+
+int main(void){
+  int n;
+  n = input();
+  output(fatorial(n))
+  return(0)
+}
